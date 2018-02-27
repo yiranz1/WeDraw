@@ -1,0 +1,8 @@
+[Unit]
+ Description=daphne
+ [Service]
+ WorkingDirectory=/home/ubuntu/Team314/src/sprint3
+ ExecStart=/usr/local/bin/daphne -b 0.0.0.0 -p 8000 sprint3.asgi:channel_layer
+ Restart=always
+ [Install]
+ WantedBy=multi-user.target

@@ -1,0 +1,1 @@
+{"max-time":"{{max_time|date:"c"}}","host":"{{host}}"}

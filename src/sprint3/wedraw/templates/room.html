@@ -1,0 +1,5 @@
+{% load static %}
+        {% if label != "000" %}
+
+        <a class='collection-item' data-room-id='{{ id }}' a href = \"{% url 'join_room' label %}\">Join Room {{ label }}</a> 
+        {% endif %}        

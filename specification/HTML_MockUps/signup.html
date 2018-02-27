@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="sign up page for grumblr">
+    <meta name="author" content="Yiran Zhou">
+    
+
+    <title>Sign up</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/signup.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form class="form-signup" action = "homepage.html" method = "get">
+        <h2 class="form-signup-heading">Sign Up for WeDraw!</h2>
+        <label for="inputUsername" class="sr-only">Username</label>
+        <input type="text" id="inputUsername" class="form-control" placeholder="Username">
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="text" id="inputPassword" class="form-control" placeholder="Password">
+
+        <label for="inputConfirm" class="sr-only">Confirm Password</label>
+        <input type="text" id="inputConfirm" class="form-control" placeholder="Confirm Password">
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+      </form>
+    </div>
+
+    <!-- /container -->
+    <div class="login">
+        <h2 class = "login-heading">Already have an account?</h2>
+        <button class="btn btn-lg btn-primary btn-block" type = "submit" onClick = "{window.location.href='login.html'}">Log in</button>
+    </div>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="css/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+    {% block title %}WeDraw{% endblock %}
+    {% block css %}
+    <link href = "/static/css/game_drawer.css" rel = "stylesheet">
+    <link type="text/css" rel="stylesheet" href="/static/css/materialize.css"  media="screen,projection"/>
+    {% endblock %}
+
+    {% load static %}
+
+    {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col s3 m3 user-list">
+                 {% for user in users %}
+                    
+                    User {{ user.user }} {% if user.user != painter %}<span class="Guesser" id =  "{{ user.user }}">
+                    Score is : {{ user.score }}</span>
+                               {% else %}<span id = "Drawer">Score is : {{ user.score }}</span>{% endif %}<br>
+                    
+                    {% endfor %}
+
+                <div id="guesser-submit">
+                        <form class="guess_form" action = "{% url 'check_result' %}" method ="post" >
+                        
+                        <input id="guesser-submit-input" type="text" name="guess" class="form-control" placeholder="Make Your Guess">
+                        <button class = "btn" id="guesser-submit-btn" type = "submit">Guess!</button>
+                    {% csrf_token %}
+                    </form>
+
+                </div>
+                             
+                <p class = "guess_result" id = "guess-result"></p>
+                <p> Some Hints:          
+                    <h5 id="guesser-hint1"></h5>
+                    <h5 id="guesser-hint2"></h5>
+                    <h5 id="guesser-hint3"></h5>
+                </p> 
+            </div>           
+
+            <div class="col s9 m9 canvas-area">
+            <p class="room" room-label="{{room.label}}" data-room-id="{{ room.id }}"> You are playing in {{ room.label }}</p>
+                <div class="container">
+                    <h5 id="guesser-hint"></h5>
+                    <h4 hidden id="wordID">{{wordsid}}</h4>
+                    <h5>Time remaining : <span id = "counter"></span></h5>
+                    
+                    <canvas id = "displaying-area" width="600" height="550"/></canvas>
+                </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block js %}
+    <script src="/static/js/forguesser.js" type="text/javascript"></script>
+    {% endblock %}

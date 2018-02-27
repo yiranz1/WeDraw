@@ -1,0 +1,8 @@
+[Unit]
+Description=runworker
+[Service]
+WorkingDirectory=/home/ubuntu/Team314/src/sprint3
+ExecStart=/usr/bin/python manage.py runworker
+Restart=always
+[Install]
+WantedBy=multi-user.target

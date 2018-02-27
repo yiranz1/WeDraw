@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+    {% block title %}Sign up{% endblock %}
+
+    <!-- Custom styles for this template -->
+    {% block css %}
+    <link href="../../static/css/signup.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    {% endblock %}
+
+  {% block error %}
+    {% for error in errors %}
+    <p class="error">
+    {{error}}
+    </p>
+    {% endfor %}
+  {% endblock %}
+
+  {% block content %}
+    <div class="container">
+
+      <form class="form-signup" action = "{% url 'signup' %}'}" method = "post">
+        <h2 class="form-signup-heading">Sign Up for WeDraw!</h2>
+        <label for="inputUsername" class="sr-only">Username</label>
+        <input type="text" name="username" class="form-control" placeholder="Username" required>
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="password1" class="form-control" placeholder="Password" required>
+
+        <label for="inputConfirm" class="sr-only">Confirm Password</label>
+        <input type="password" name="password2" class="form-control" placeholder="Confirm Password" required>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+        {% csrf_token %}
+      </form>
+    
+        <form class="login" action = "{% url 'login' %}">
+        <h2 class = "login-heading">Already have an account?</h2>
+        <button class="btn btn-lg btn-primary btn-block" type = "submit">Log in</button>
+        {% csrf_token %}
+      </form>
+    </div>
+  {% endblock %}
+    

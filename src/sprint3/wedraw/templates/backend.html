@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+  {% block content %}
+  <h3>Search User Info</h3>
+  <form class="container form form-horizontal container-central"  method ="get" action="#" id="backend-form">
+    {% csrf_token %}
+    <input id="backend" type="text" name="user" class="form-control" placeholder="enter user id">
+    <button class = "btn" id="requestBackend" type = "submit">Search user</button>
+</form>
+
+<div>
+  <h3>User Info :</h3>
+  <p><ol id="UserInfoList"></ol></p>
+
+</div>
+<br>
+<br>
+<h3>Search Room Info</h3>
+<form class="container form form-horizontal container-central"  method ="get" action="#" id="backend-roomform">
+  {% csrf_token %}
+  <input id="backend" type="text" name="room" class="form-control" placeholder="enter room lable">
+  <button class = "btn" id="requestBackendRoom" type = "submit">Search room</button>
+</form>
+
+<div>
+<h3>Room Info :</h3>
+<p><ol id="RoomInfoList"></ol></p>
+
+</div>
+
+    {% endblock %}

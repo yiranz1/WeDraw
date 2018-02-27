@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+    {% block title %}WeDraw{% endblock %}
+
+    {% block css %}
+    <link href = "/static/css/game_drawer.css" rel = "stylesheet">
+    <link type="text/css" rel="stylesheet" href="/static/css/materialize.css"  media="screen,projection"/>
+    {% endblock %}
+
+    {% load static %}
+
+    {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col s3 m3 user-list">
+                    {% for user in users %}
+                     User {{ user.user }} {% if user.user != request.user %}<span class="Guesser" id =  "{{ user.user }}">
+                     Score is : {{ user.score }}</span>
+                               {% else %}<span id = "Drawer">Score is : {{ user.score }}</span>{% endif %}<br>
+                    {% endfor %}
+
+            </div>
+            
+            <div class="col s9 m9 canvas-area">
+            <p class="room" room-label="{{room.label}}" data-room-id="{{ room.id }}"> You are playing in {{ room.label }}</p>
+                
+                    <h5 id="painter-hint">You Are Drawing : {{words}}</h5>
+                        
+                    <h5>Time remaining : <span id = "counter"></span></h5>
+                    <div class = "tool">
+                    <span id="color-form">
+                    <ul id="dropdown2" class="dropdown-content">
+                        <li class = "color" id = "Red"><p class = "choice">Red</p></li>
+                        <li class = "color" id = "Yellow"><p class = "choice">Yellow</p></li>
+                        <li class = "color" id = "Blue"><p class = "choice">Blue</p></li>
+                        <li class = "color" id = "Black"><p class = "choice">Black</p></li>
+                     </ul>
+                        <a class="btn dropdown-button" href="#!" data-activates="dropdown2">Colors</a>
+                    </span>
+                    <span id="size-form">
+                    <ul id="dropdown1" class="dropdown-content">
+                            <li class = "size" id = "Big"><p class = "choice">Big</p></li>
+                            <li class = "size" id = "Medium"><p class = "choice">Medium</p></li>
+                            <li class = "size" id = "Small"><p class = "choice">Small</p></li>
+                    </ul>
+                    <a class="btn dropdown-button" href="#!" data-activates="dropdown1">Size</a>
+                    </span>
+                    <span id="tool-form">
+                        <ul id="dropdown3" class="dropdown-content">
+                            <li class = "tool" id = "Pencil"><p class = "choice">Pencil</p></li>
+                            <li class = "tool" id = "Spray"><p class = "choice">Spray</p></li>
+                            <li class = "tool" id = "Eraser"><p class = "choice">Eraser</p></li>
+                        </ul>
+                        <a class="btn dropdown-button" href="#!" data-activates="dropdown3">Tools</a>
+                    </span>
+
+                    <span id = "clear">
+                            <button class = "btn" id="clear-btn">clear</button>
+                    </span>
+                    </div>
+                    
+                        <canvas id = "drawing-area" width="600" height="550"></canvas>
+                
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    
+    {% block js %}
+    <script src="/static/js/combine_draw_guess.js" type="text/javascript"></script>
+    {% endblock %}

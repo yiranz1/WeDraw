@@ -1,0 +1,40 @@
+#drawing-area{
+	border:1px solid #6699ff;
+	-moz-user-select: none;
+}
+#displaying-area{
+	border:2px solid #9999ff;
+	width: 600px;
+	height: 550px;
+}
+#guesser-submit-btn {
+	margin-bottom: 10px;
+}
+.col{
+	float: left;
+	width: 8%;
+	
+}
+
+.guess_form {
+	text-align: left;
+}
+.choice {
+	font-size: 18px;
+	vertical-align: middle;
+	text-align: center;
+
+}
+.tool {
+	margin-bottom: 10px;
+}
+
+.guess_result {
+	font-size: 18px;
+	font-style: bold;
+	color: red;
+}
+
+p {
+	margin: 0 auto;
+}

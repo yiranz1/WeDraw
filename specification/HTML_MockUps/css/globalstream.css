@@ -1,0 +1,64 @@
+body {
+  min-height: 2000px;
+  padding-bottom: 40px;
+  background-color: #ebebe0;
+  background-repeat: no-repeat;
+  background-size:100%;
+}
+
+.post-area{
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom:10px;
+  text-align: right;
+  position: relative;
+}
+
+.form-button{
+  background-color: #99ccff; /* Blue */
+  border: none;
+  border-radius: 8px;
+  color: white;
+  width: 100px;
+  height: 50px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  float: right;
+
+}
+.form-control {
+  max-width: 800px;
+  height: 120px;
+  margin: 0 auto;
+  border: 5px solid #99ccff;
+  position: relative;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 24px;
+}
+
+.room{
+    background-color: white;
+    max-width: 800px;
+    border: 5px solid #99ccff;
+    padding: 5px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.post-text{
+  font-size:16px;
+  margin: 0 auto;
+}
+
+.navbar-static-top {
+  margin-bottom: 19px;
+}
+.jumbotron .time{
+  font-size:12px;
+}
